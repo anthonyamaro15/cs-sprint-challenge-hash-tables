@@ -3,8 +3,24 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    occurrences = {}
 
-    return result
+   #  print(arrays)
+
+    for array in arrays:
+
+        for number in array:
+            if number in occurrences:
+                occurrences[number] += 1
+            else:
+                occurrences[number] = 1
+
+   #  for data in occurrences.items():
+   #      # data[0] == key
+   #      # data[1] == value
+   #      if data[1] == len(arrays):
+   #          return data
+    return [data[0] for data in occurrences.items() if data[1] == len(arrays)]
 
 
 if __name__ == "__main__":
